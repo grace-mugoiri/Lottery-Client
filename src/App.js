@@ -26,12 +26,18 @@ class App extends Component {
 
     this.setState({ message: 'Waiting on Transaction success...'});
 
-    await lottery.methods.enterLottery().send({
+    try {
+      await lottery.methods.enterLottery().send({
       from: accounts[0],
       value: web3.utils.toWei(this.state.value, 'ether')
     });
     this.setState({ message: 'You have been entered!'});
+  } catch (error) {
+    this.setState({ message: 'Waiting'})
   }
+  this.setState({ message: 'User rejected transaction'})
+  };
+
 
   onClick = async event => {
     event.preventDefault();
@@ -43,35 +49,40 @@ class App extends Component {
     });
 
     this.setState({ message: 'A winner has been picked.'});
-    
+
   }
 
   render() {
     return (
-      <div>
-        <h2>The Lottery Contract</h2>
-        <p>This Contract is managed by {this.state.manager} </p>
-        <br />
-        <p>There are currently {this.state.players.length} people entered. 
-        Competing to win {web3.utils.fromWei(this.state.balance, 'ether')} Ether! </p>
-        <hr />
+      <div className="section">
+        <section className="section">
+          <h2 className="lottery">The Lottery Contract</h2>
+          <p id="para">This Contract is managed by: <strong> { this.state.manager} </strong> </p>
+          
+          <p id="para">There are currently -  <strong>{this.state.players.length} </strong> - people entered. 
+          Competing to win: {web3.utils.fromWei(this.state.balance, 'ether')} Ether! </p>
+          <hr />
 
-        <form onSubmit={this.onSubmit}>
-          <h3>Want to try your luck?</h3>
-          <div>
-            <label>Amount of Ether to enter</label>
-            <input 
-              value={this.state.value}
-              onChange={ event => this.setState({ value: event.target.value })}
-            />
-          </div>
-          <button>Enter</button>
-        </form>
-        <hr />
-        <h3>ready to pick a winner?</h3>
-        <button onClick={this.onClick}>Pick a winner</button>
-        <hr />
-        <h1>{this.state.message}</h1>
+          <form onSubmit={this.onSubmit}>
+            <h3 className="lottery">Want to try your luck?</h3>
+            <div>
+              <label id="para">Amount of Ether to enter</label>
+              <input
+                placeholder="ether"
+                id="input"
+                value={this.state.value}
+                onChange={ event => this.setState({ value: event.target.value })}
+              />
+            </div>
+            <button id="enter">Enter</button>
+          </form>
+          <hr />
+          <h3 className="lottery">ready to pick a winner?</h3>
+          <button onClick={this.onClick} id="enter">Pick a winner</button>
+          <hr />
+          <h1>{this.state.message}</h1>
+          
+        </section>
       </div>
     )
   };
