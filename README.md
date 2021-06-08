@@ -23,6 +23,9 @@ Javascript(react) and web3
 # live demo
 Find the live demo [here](https://the-lottery-contract.herokuapp.com/)
 
+# WARNING
+- To make transactions it uses real Eth so be careful when making the transactions as it uses metamask to inject web3.
+
 # screenshot of home page
 <img width="1350" alt="Screenshot 2021-06-08 at 13 34 10" src="https://user-images.githubusercontent.com/20679425/121170689-395fe900-c85e-11eb-81f5-e52e5e909c9c.png">
 
