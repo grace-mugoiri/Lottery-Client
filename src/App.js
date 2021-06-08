@@ -57,7 +57,7 @@ class App extends Component {
       <div className="section">
         <section className="section">
           <h2 className="lottery">The Lottery Contract</h2>
-          <p id="para">This Contract is managed by: <strong> { this.state.manager} </strong> </p>
+          <p id="para">This Contract is managed by: { this.state.manager}</p>
           
           <p id="para">There are currently -  <strong>{this.state.players.length} </strong> - people entered. 
           Competing to win: {web3.utils.fromWei(this.state.balance, 'ether')} Ether! </p>
