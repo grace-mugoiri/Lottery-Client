@@ -21,6 +21,8 @@ Code written by @grace-mugoiri
 Javascript(react) and web3 
 
 # live demo
-Find the live demo [here](https://grace-mugoiri.github.io/Restaurant-Page/dist/index.html)
+Find the live demo [here](https://the-lottery-contract.herokuapp.com/)
 
 # screenshot of home page
+<img width="1350" alt="Screenshot 2021-06-08 at 13 34 10" src="https://user-images.githubusercontent.com/20679425/121170689-395fe900-c85e-11eb-81f5-e52e5e909c9c.png">
+
